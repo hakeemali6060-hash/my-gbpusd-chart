@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>GBP-USD 5-min Break-out Scanner</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+  <header>
+    <h1>GBP-USD 5-min Break-out Scanner</h1>
+    <p>Auto-box 00-07 GMT → live entry / stop / TP</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label>Time-frame
+        <select id="timeframe">
+          <option value="1m">1 min</option>
+          <option value="5m" selected>5 min</option>
+          <option value="15m">15 min</option>
+          <option value="1h">1 h</option>
+        </select>
+      </label>
+      <button id="refresh">Refresh</button>
+    </section>
+
+    <section class="breakout">
+      <h2>London Break-out Setup</h2>
+      <div class="setup">
+        <div>Status: <strong id="status">Scanning…</strong></div>
+        <div>Entry: <strong id="entry">-</strong></div>
+        <div>Stop: <strong id="stop">-</strong></div>
+        <div>TP (1.5×R): <strong id="tp">-</strong></div>
+      </div>
+    </section>
+
+    <div id="chart"></div>
+  </main>
+
+  <footer>
+    Data via <a href="https://binance.com" target="_blank">Binance</a> | hosted free on GitHub Pages
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
